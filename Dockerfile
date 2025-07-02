@@ -8,4 +8,4 @@ RUN ./mvnw clean package -DskipTests
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "target/wareeHouse-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "java -jar target/wareeHouse-1.0.0.jar"]
