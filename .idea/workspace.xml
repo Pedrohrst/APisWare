@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9e3bf22-1bd9-4e9b-bcd1-8922bb6c8d09" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/WHDB/APIs/ApiApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/WHDB/APIs/Produto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/WHDB/APIs/imagemService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/WHDB/APIs/produtoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/WHDB/APIs/produtomodel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/WHDB/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/WHDB/Postgres/conexao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +38,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Modules",

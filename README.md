@@ -1,0 +1,18 @@
+# Instruções para deploy da API WareHouse no Render.com
+
+## Passo 1: Criar Dockerfile
+
+No diretório raiz do projeto, crie o arquivo `Dockerfile` com o seguinte conteúdo:
+
+```dockerfile
+FROM openjdk:17-jdk-alpine
+
+WORKDIR /app
+
+COPY . .
+
+RUN ./mvnw clean package -DskipTests
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "target/wareeHouse-0.0.1-SNAPSHOT.jar"]
