@@ -1,10 +1,11 @@
-FROM maven:3.9.1-eclipse-temurin-17 AS build
-WORKDIR /app
-COPY . .
-RUN mvn clean package -DskipTests
+FROM openjdk:17-jdk-alpine
 
-FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
-COPY --from=build /app/target/wareeHouse-0.0.1-SNAPSHOT.jar app.jar
+
+COPY . .
+
+RUN ./mvnw clean package -DskipTests
+
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","app.jar"]
+
+CMD ["java", "-jar", "target/wareeHouse-0.0.1-SNAPSHOT.jar"]
