@@ -1,5 +1,8 @@
-package org.WHDB.APIs;
+package org.WHDB.Controller;
 
+import org.WHDB.APIs.Produto;
+import org.WHDB.APIs.imagemService;
+import org.WHDB.APIs.produtomodel;
 import org.springframework.http.CacheControl;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 @CrossOrigin(origins = "*")
 public class produtoController {
 
-    private final imagemService imagemService;
+    private final org.WHDB.APIs.imagemService imagemService;
 
     public produtoController(imagemService imagemService) {
         this.imagemService = imagemService;

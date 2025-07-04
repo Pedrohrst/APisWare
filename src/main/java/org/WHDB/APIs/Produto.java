@@ -84,7 +84,7 @@ public class Produto {
 
     public static List<produtomodel> listarProdutos() {
         List<produtomodel> produtos = new ArrayList<>();
-        String sql = "SELECT id, nome, preco, descricao FROM produto"; // sem imagem!
+        String sql = "SELECT id, nome, preco, descricao FROM produto";
 
         try (Connection con = conexao.conectar();
              PreparedStatement stmt = con.prepareStatement(sql)) {
