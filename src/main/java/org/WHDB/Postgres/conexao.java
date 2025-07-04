@@ -6,13 +6,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class conexao {
-    private static final String URL = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:6543/postgres";
-    private static final String USUARIO = "postgres.gfuwwgxtdewrxrpmvpvj";
-    private static final String SENHA = "Warehouse23102005cuidado";
 
     public static Connection conectar() {
+        String url = System.getenv("SPRING_DATASOURCE_URL");
+        String user = System.getenv("SPRING_DATASOURCE_USERNAME");
+        String pass = System.getenv("SPRING_DATASOURCE_PASSWORD");
+
         try {
-            return (Connection) DriverManager.getConnection(URL, USUARIO, SENHA);
+            return DriverManager.getConnection(url, user, pass);
         } catch (SQLException e) {
             System.err.println("Erro ao conectar ao banco: " + e.getMessage());
             return null;
