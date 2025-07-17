@@ -57,5 +57,4 @@ public class R2Controller {
             return ResponseEntity.status(500).build();
         }
     }
-
 }
