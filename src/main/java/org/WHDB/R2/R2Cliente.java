@@ -66,4 +66,9 @@ public class R2Cliente {
         return resultados;
     }
 
+    public S3Client getS3Client() {
+        return s3;
+    }
+
+
 }

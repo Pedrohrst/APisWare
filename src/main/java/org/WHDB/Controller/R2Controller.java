@@ -2,9 +2,13 @@ package org.WHDB.Controller;
 
 import org.WHDB.R2.R2Cliente;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import software.amazon.awssdk.core.ResponseBytes;
+import software.amazon.awssdk.services.s3.model.GetObjectRequest;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -55,6 +59,34 @@ public class R2Controller {
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(500).build();
+        }
+    }
+    @GetMapping("/imagem/{key}")
+    public ResponseEntity<byte[]> baixarImagem(@PathVariable String key) {
+        try {
+            // Cria a requisição para buscar o objeto no bucket
+            GetObjectRequest getObjectRequest = GetObjectRequest.builder()
+                    .bucket(bucketName)
+                    .key(key)
+                    .build();
+
+            // Busca o objeto e lê o conteúdo em bytes
+            ResponseBytes<?> objectBytes = r2Cliente.getS3Client().getObjectAsBytes(getObjectRequest);
+            byte[] data = objectBytes.asByteArray();
+
+            // Define o content type baseado na extensão do arquivo
+            String contentType = "image/png"; // ou você pode inferir pelo key
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.parseMediaType(contentType));
+
+            return ResponseEntity.ok()
+                    .headers(headers)
+                    .body(data);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.notFound().build();
         }
     }
 }
